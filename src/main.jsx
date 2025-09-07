@@ -6,11 +6,13 @@ import { DataProvider } from "./context/DataContext.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import SheetUpload from "./pages/SheetUpload.jsx";
+import ProductDetails from "./pages/ProductDetails.jsx";
 import "./index.css";
+import Loader from "./components/Loader.jsx";
 
 function ProtectedRoute({ children }) {
   const { user, initializing } = useAuth();
-  if (initializing) return <div>Loading...</div>;
+  if (initializing) return <Loader/>
   return user ? children : <Navigate to="/login" replace />;
 }
 
@@ -29,6 +31,7 @@ createRoot(document.getElementById("root")).render(
                 </ProtectedRoute>
               }
             />
+            <Route path="/product/:id" element={<ProtectedRoute><ProductDetails /></ProtectedRoute>} />
             <Route
               path="/dashboard"
               element={
