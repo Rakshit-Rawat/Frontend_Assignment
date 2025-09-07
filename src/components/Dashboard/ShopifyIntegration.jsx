@@ -1,4 +1,4 @@
-import React from "react";
+
 import Shopify from "../../assets/shopify.svg";
 
 export default function ShopifyIntegration({ onConnect }) {
