@@ -8,7 +8,7 @@ export default function LoginPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (user) navigate("/dashboard", { replace: true });
+    if (user) navigate("/upload", { replace: true });
   }, [user, navigate]);
 
   const handleGoogle = async () => {
