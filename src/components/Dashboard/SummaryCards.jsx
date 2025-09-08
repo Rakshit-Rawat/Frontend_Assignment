@@ -44,7 +44,7 @@ export default function SummaryCards({ totals, profitMargin }) {
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
       {cards.map(({ title, value, tone, trend, id }, index) => {
         const s = styles[tone];
         return (
